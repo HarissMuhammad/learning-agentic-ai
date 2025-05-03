@@ -42,5 +42,5 @@ agent = Agent(
     tools=[get_weather],
 )
 
-result = Runner.run_sync(agent, "What is the weather like in chountra")
+result = Runner.run_sync(agent, "What is the weather like in peshawar,kpk")
 print(result.final_output)
