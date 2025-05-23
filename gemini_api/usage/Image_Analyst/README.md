@@ -21,6 +21,13 @@ This project uses **Google Gemini 2.0 Flash** to analyze an image and generate a
 - 💬 Text-based natural language description output
 
 ---
+## 📥 Getting Started
+1. Clone the Repository
+```bash
+git clone https://github.com/HarrisMuhammad/learning-agentic-ai.git
+cd  learning-agentic-ai/gemini_api/usage/Image_Analyst
+
+```
 
 ## 🧰 Requirements
 
