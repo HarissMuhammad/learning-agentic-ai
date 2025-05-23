@@ -37,8 +37,8 @@ This project uses [uv](https://github.com/astral-sh/uv) for package management. 
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
 # Clone this repository
-git clone https://github.com/your-username/weather-agent-gemini.git
-cd weather-agent-gemini
+git clone https://github.com/HarrisMuhammad/learning-agentic-ai.git
+cd weather-update
 
 # Install dependencies
 uv pip install -r requirements.txt
