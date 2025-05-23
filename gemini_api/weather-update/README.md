@@ -70,7 +70,7 @@ The current weather in Peshawar is 29°C with clear sky.
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://opensource.org/license/mit) file for details.
 
 ## 🙋‍♂️ Acknowledgements
 
