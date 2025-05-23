@@ -37,8 +37,10 @@ This project uses [uv](https://github.com/astral-sh/uv) for package management. 
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
 # Clone this repository
-git clone https://github.com/your-username/weather-agent-gemini.git
-cd weather-agent-gemini
+git clone https://github.com/HarrisMuhammad/learning-agentic-ai.git
+cd  learning-agentic-ai/gemini_api/weather-update
+
+
 
 # Install dependencies
 uv pip install -r requirements.txt
@@ -68,7 +70,7 @@ The current weather in Peshawar is 29°C with clear sky.
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://opensource.org/license/mit) file for details.
 
 ## 🙋‍♂️ Acknowledgements
 
