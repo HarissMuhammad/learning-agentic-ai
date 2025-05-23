@@ -38,7 +38,9 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 
 # Clone this repository
 git clone https://github.com/HarrisMuhammad/learning-agentic-ai.git
-cd weather-update
+cd  learning-agentic-ai/gemini_api/weather-update
+
+
 
 # Install dependencies
 uv pip install -r requirements.txt
