@@ -6,7 +6,6 @@ __pycache__/
 
 # Virtual environments
 .venv/
-venv/
 
 # Environment variables
 .env
@@ -17,4 +16,5 @@ venv/
 
 # Other temp files
 .DS_Store
-.venv/.env
+
+.venv/
