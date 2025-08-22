@@ -16,7 +16,7 @@ async def main():
 
     load_dotenv()
     api_key = os.getenv("API_KEY")
-    
+
     class ManagerEscalation(BaseModel):
         issue: str  # the issue being escalated
         reason: str  # the reason for escalation
@@ -75,18 +75,18 @@ async def main():
         if event.type == "raw_response_event":
             continue
         elif event.type == "agent_updated_stream_event":
-            print(f"Agent Updated {event.new_agent.name} \n")
+            print(f"Current Agent : {event.new_agent.name} \n")
             continue
         elif event.type == "run_item_stream_event":
             if event.item.type == "tool_call_item":
-                print(f"Tool Called \n")
+                print(f"Tool Called  \n")
             if event.item.type == "tool_call_output_item":
-                print(f" -Tool Ouptut {event.item.output}\n")
+                print(f" -Tool Output {event.item.output}\n")
             if event.item.type == "handoff_call_item":
-                print(f"handoff initiating to {event.item.agent.name}\n")
+                print(f"handoff initiating from {event.item.agent.name}\n")
             if event.item.type == "handoff_output_item":
                 time.sleep(0.5)
-                print(f"Handoff to  {event.item.agent.name} \n")
+                print(f"Handoff initiated from: {event.item.agent.name} \n")
             if event.item.type == "message_output_item":
                 print(f"-- Message Output : {ItemHelpers.text_message_output(event.item)}\n")
             else:
