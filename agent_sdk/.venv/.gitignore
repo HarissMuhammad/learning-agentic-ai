@@ -1,2 +1,20 @@
-.env
+# Python ignores
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
 .venv/
+venv/
+
+# Environment variables
+.env
+*.env
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Other temp files
+.DS_Store
+.venv/.env
