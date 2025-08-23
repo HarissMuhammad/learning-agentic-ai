@@ -78,17 +78,19 @@ async def main():
             print(f"Current Agent : {event.new_agent.name} \n")
             continue
         elif event.type == "run_item_stream_event":
-            if event.item.type == "tool_call_item":
+            event = event.item
+            
+            if event.type == "tool_call_item":
                 print(f"Tool Called  \n")
-            if event.item.type == "tool_call_output_item":
-                print(f" -Tool Output {event.item.output}\n")
-            if event.item.type == "handoff_call_item":
-                print(f"handoff initiating from {event.item.agent.name}\n")
-            if event.item.type == "handoff_output_item":
+            if event.type == "tool_call_output_item":
+                print(f" -Tool Output {event.output}\n")
+            if event.type == "handoff_call_item":
+                print(f"handoff initiating from {event.agent.name}\n")
+            if event.type == "handoff_output_item":
                 time.sleep(0.5)
-                print(f"Handoff initiated from: {event.item.agent.name} \n")
-            if event.item.type == "message_output_item":
-                print(f"-- Message Output : {ItemHelpers.text_message_output(event.item)}\n")
+                print(f"Handoff initiated from: {event.agent.name} \n")
+            if event.type == "message_output_item":
+                print(f"-- Message Output : {ItemHelpers.text_message_output(event)}\n")
             else:
                 pass
     print("____Streaming_OFF____")
