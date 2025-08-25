@@ -1,0 +1,129 @@
+# Agent SDK Examples
+
+This repository demonstrates how to use an agentic AI SDK for building, running, and orchestrating AI agents with Python. The examples cover agent creation, tool integration, handoffs, tracing, streaming, and structured outputs.
+
+## Features
+
+- **Agent Creation**: Define agents with custom instructions, models, and output schemas.
+- **Tool Integration**: Add function tools (e.g., weather lookup, ticket creation) to agents.
+- **Structured Outputs**: Use Pydantic models for structured agent responses.
+- **Handoffs**: Seamlessly transfer tasks between agents based on logic or user input.
+- **Tracing**: Trace agent workflows for debugging and transparency.
+- **Streaming**: Stream agent responses and events in real time.
+- **Web Search**: Integrate web search tools for up-to-date information.
+
+## Example Usage
+
+### 1. Basic Agent Setup
+
+```python
+from agents import Agent, Runner
+import openai, os
+
+openai.api_key = os.environ["OPENAI_API_KEY"]
+
+agent = Agent(
+    name="Psychology Guide",
+    instructions="You are a psychology expert. Provide concise explanations.",
+    model="gpt-5-mini",
+)
+
+result = await Runner.run(agent, "What is Eisenhower Matrix?")
+print(result.final_output)
+```
+
+### 2. Tool Integration
+
+```python
+from agents import function_tool
+
+@function_tool
+def get_weather(city: str) -> str:
+    """Get the Current Weather for a city"""
+    # Implementation here
+```
+
+### 3. Structured Output with Pydantic
+
+```python
+from pydantic import BaseModel
+
+class Car(BaseModel):
+    make: str
+    generations: str
+    year_released: int
+    type: str
+    color: str
+    still_produced: bool
+
+car_agent = Agent(
+    name="Car Agent",
+    instructions="You are a car expert.",
+    model="gpt-4o-mini",
+    output_type=Car,
+)
+```
+
+### 4. Handoffs Between Agents
+
+```python
+from agents import handoff, RunContextWrapper
+
+def on_arabic_handoff(ctx: RunContextWrapper[None]):
+    print("Handing off to Arabic translator agent")
+
+quote_agent = Agent(
+    name="Quote Agent",
+    instructions="Find a quote and hand off to the required translator agent.",
+    model="gpt-5-mini",
+    handoffs=[
+        handoff(agent=translator_agent_arabic, on_handoff=on_arabic_handoff),
+        # ... other handoffs
+    ],
+)
+```
+
+### 5. Tracing Agent Workflows
+
+```python
+from agents import trace
+
+with trace("Customer Service Workflow"):
+    result = await Runner.run(customer_service_agent, "I need a refund but the website is blank")
+    print(result.final_output)
+```
+
+### 6. Streaming Responses
+
+```python
+result = Runner.run_streamed(agent, "Give me 5 jokes on dark Psychology")
+
+async for event in result.stream_events():
+    # Handle streaming events
+```
+
+## Requirements
+
+- Python 3.8+
+- `openai`
+- `pydantic`
+- `requests`
+- `python-dotenv`
+- Custom `agents` SDK (see code for details)
+
+## Setup
+
+1. Clone this repository.
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Set your environment variables (`OPENAI_API_KEY`, etc.) in a `.env` file.
+
+## License
+
+MIT
+
+---
+
+**Note:** This README summarizes the code and usage patterns from `Sdk_initials.ipynb`. For full examples and details, see the notebook.
