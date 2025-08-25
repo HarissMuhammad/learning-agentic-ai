@@ -55,12 +55,11 @@ This demo showcases the streaming capabilities of OpenAI agents using the `agent
 - Python 3.8+
 - `streamlit`
 - `python-dotenv`
-- `agent_sdk` (custom library)
+- `agent_sdk` (custom library)`
 - `openai`
 
 ## Screenshot
-
-![Streaming Demo Screenshot](screenshot.png)
+![Streaming Demo Screenshot](./streamlit.png)
 
 ## License
 
