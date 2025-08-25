@@ -114,11 +114,20 @@ async for event in result.stream_events():
 ## Setup
 
 1. Clone this repository.
-2. Install dependencies:
+    ```bash
+    git clone https://github.com/HarissMuhammad/learning-agentic-ai.git 
+    ```
+2. create Virtual Environment.
+```bash
+    uv venv
+    #to activate on linux
+    source .venv/bin/activate
+```
+3. Install dependencies:
    ```bash
-   pip install -r requirements.txt
+   pip install pyproject.toml
    ```
-3. Set your environment variables (`OPENAI_API_KEY`, etc.) in a `.env` file.
+4. Set your environment variables (`OPENAI_API_KEY`, etc.) in a `.env` file.
 
 ## License
 
