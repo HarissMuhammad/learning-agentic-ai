@@ -10,4 +10,5 @@ dependencies = [
     "openai-agents>=0.2.9",
     "pip>=25.2",
     "tensorflow>=2.20.0",
+    "ipykernel<6.30.1"
 ]
