@@ -1,3 +1,19 @@
+Metadata-Version: 2.4
+Name: agent-sdk
+Version: 0.1.0
+Summary: Add your description here
+Requires-Python: >=3.13
+Description-Content-Type: text/markdown
+Requires-Dist: agents>=1.4.0
+Requires-Dist: ipykernel>=6.30.1
+Requires-Dist: openai-agents>=0.2.9
+Requires-Dist: pip>=25.2
+Requires-Dist: tensorflow>=2.20.0
+Requires-Dist: streamlit
+Requires-Dist: ipykernel
+Requires-Dist: dotenv
+Requires-Dist: pydantic>=2.10.7
+
 # Agent SDK Examples
 
 This repository demonstrates how to use an agentic AI SDK for building, running, and orchestrating AI agents with Python. The examples cover agent creation, tool integration, handoffs, tracing, streaming, and structured outputs.
