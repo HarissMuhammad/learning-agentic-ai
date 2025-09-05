@@ -13,5 +13,7 @@ dependencies = [
     "streamlit",
     "ipykernel",
     "dotenv",
-    "pydantic>=2.10.7",]
+    "pydantic>=2.10.7",
+    "graphviz>=0.21",
+]
 
