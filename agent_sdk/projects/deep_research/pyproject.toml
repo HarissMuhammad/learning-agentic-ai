@@ -12,3 +12,5 @@ dependencies = ["pydantic",
                 "python-dotenv",
                 "openai-agents"
                 ]
+[tool.uv]
+venv = ".venv"
