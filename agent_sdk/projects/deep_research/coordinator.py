@@ -1,4 +1,5 @@
 from rich.console import Console
+from rich.panel import Panel
 from agents import Agent, Runner, trace  # type: ignore
 from research_agents.query_agent import query_agent
 from agents import ItemHelpers
@@ -20,7 +21,7 @@ class ResearchCoordinator:
         with console.status("[bold cyan]Analyzing Query...[/bold cyan]") as status:
 
             result = await Runner.run(query_agent, input=self.query)
-            console.print("[bold cyan] Query Analysis [/bold cyan]")
+            console.print(Panel("[bold cyan] Query Analysis [/bold cyan]"))
 
             console.print("[yellow]Thoughts :[/yellow]", result.final_output.thoughts)
             console.print("[yellow] Genereated Search Queries : [/yellow]")
