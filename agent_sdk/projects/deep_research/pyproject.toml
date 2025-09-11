@@ -4,13 +4,16 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
-dependencies = ["pydantic",
-                "duckduckgo-search",
-                "bs4",
-                "requests",
-                "rich",
-                "python-dotenv",
-                "openai-agents"
-                ]
-[tool.uv]
-venv = ".venv"
+dependencies = [
+    "pydantic",
+    "duckduckgo-search",
+    "bs4",
+    "requests",
+    "rich",
+    "python-dotenv",
+    "openai-agents",
+    "griffe>=1.14.0",
+    "typing-extensions>=4.15.0",
+]
+
+

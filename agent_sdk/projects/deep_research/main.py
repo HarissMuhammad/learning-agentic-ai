@@ -2,6 +2,7 @@ import asyncio
 from dotenv import load_dotenv
 from rich.console import Console
 from rich.prompt import Prompt
+from coordinator import ResearchCoordinator
 
 load_dotenv()
 console = Console()
@@ -17,6 +18,11 @@ async def main():
     if not query.strip():
         console.print("[red]Error:[/red] Query cannot be empty.")
         return
+    
+    research_coordinator = ResearchCoordinator(query)
+    report = await research_coordinator.research()
+    
+    print(report)
     
     
 if __name__ == "__main__":
